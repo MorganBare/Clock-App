@@ -1,10 +1,10 @@
-import Test from './components/Test';
+import FullPage from './components/FullPage.js';
 
 
 function App() {
   return (
     <div className="App">
-      <Test />
+      <FullPage />
     </div>
   );
 }
