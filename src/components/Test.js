@@ -3,7 +3,7 @@ import '../scss/test.scss';
 
 export default function Test(){
     return (
-        <div className='test'>
+        <div className='test font-size-4'>
             <p>shdfgsdjhfgdsjhfgds</p>
         </div>
     )

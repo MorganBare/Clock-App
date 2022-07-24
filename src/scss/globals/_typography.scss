@@ -1,5 +1,90 @@
+@use 'sass:string';
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
 body {
     font-family: 'Inter', sans-serif;
 }
+
+$breakpoint-phone: 425px;
+$breakpoint-tablet: 768px;
+$breakpoint-laptop-sm: 1440px;
+$breakpoint-laptop: 1440px;
+
+
+//font sizes
+
+$base-size: 1rem;
+
+//font sizes for mobile
+
+@media screen and (min-width: $breakpoint-phone) {
+    $font-sizes: (
+        'fs-1': $base-size * 0.625,
+        'fs-2': $base-size * 0.75,
+        'fs-3': $base-size * 0.9375,
+        'fs-4': $base-size * 1.25,
+        'fs-5': $base-size * 1.25,
+        'fs-6': $base-size * 6.25,
+    );
+
+    // creates the utility classes for font sizes
+
+    @each $fs-number, $fs-value in $font-sizes {
+        $number: string.slice($fs-number, 4);
+
+        .font-size-#{$number}{
+            font-size: $fs-value;
+        };
+    }
+}
+
+//font sizes for tablets
+
+@media screen and (min-width: $breakpoint-tablet) {
+    $font-sizes: (
+        'fs-1': $base-size * 0.9375,
+        'fs-2': $base-size * 1.125,
+        'fs-3': $base-size * 1.25,
+        'fs-4': $base-size * 4,
+        'fs-5': $base-size * 3.5,
+        'fs-6': $base-size * 12.5,
+    );
+
+    // creates the utility classes for font sizes
+
+    @each $fs-number, $fs-value in $font-sizes {
+        $number: string.slice($fs-number, 4);
+
+        .font-size-#{$number}{
+            font-size: $fs-value;
+        };
+    }
+}
+
+//font sizes for laptop and larger
+
+@media screen and (min-width: $breakpoint-laptop) {
+    $font-sizes: (
+    'fs-1': $base-size * 0.9375,
+    'fs-2': $base-size * 1.125,
+    'fs-3': $base-size * 1.25,
+    'fs-4': $base-size * 1.5,
+    'fs-5': $base-size * 2.5,
+    'fs-6': $base-size * 3.5,
+    'fs-7': $base-size * 12.5,
+    );
+
+    // creates the utility classes for font sizes
+
+    @each $fs-number, $fs-value in $font-sizes {
+        $number: string.slice($fs-number, 4);
+
+        .font-size-#{$number}{
+            font-size: $fs-value;
+        };
+    }
+}
+
+
+
+
