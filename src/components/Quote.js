@@ -10,7 +10,6 @@ export default function Quote(){
         try{
           const response = await axios('https://programming-quotes-api.herokuapp.com/Quotes/random');
           setQuote(response.data);
-          console.log(response.data)
         }catch(err){
           console.error(err)
         }
