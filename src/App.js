@@ -8,20 +8,41 @@ import './scss/app.scss';
 function App() {
 
   const [worldTime, setWorldTime] = React.useState(0)
+  const [IpInfo, setIpInfo] = React.useState(0);
 
   React.useEffect(() => {
+    console.log('Time ran')
     fetch("http://worldtimeapi.org/api/ip")
     .then(res => res.json())
     .then(data => setWorldTime(data))
-  }, [])
+  },[])
 
-  console.log(worldTime)
+  React.useEffect(() => {
+    if(worldTime.client_ip){
+      console.log('IP ran')
+      fetch(`http://api.ipapi.com/${worldTime.client_ip}?access_key=0a734a0ccb105e120c34bcc32d4c13f5`)
+      .then(IpDataRes => IpDataRes.json())
+      .then(IpData => setIpInfo(IpData))
+    }
+  }, [worldTime.client_ip])
 
   return (
       <div className="App">
+
         {/*FullPage will only render when worldTime is truthy or the API has returned data*/}
-        {worldTime && <FullPage worldTime={worldTime}/>}
-        <TimeDateInfo />
+        {worldTime && <FullPage 
+        worldTime={worldTime} 
+        city={IpInfo.city} 
+        country_code={IpInfo.country_code}
+        />}
+
+        <TimeDateInfo
+        timezone={worldTime.timezone}
+        day_of_year={worldTime.day_of_year}
+        day_of_week={worldTime.day_of_week}
+        week_number={worldTime.week_number}
+         />
+
       </div>
     );
 
