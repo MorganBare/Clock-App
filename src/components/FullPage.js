@@ -25,7 +25,7 @@ export default function FullPage(props){
             {/* quote is only shown when displayMoreInfo is false */}
             {!props.displayMoreInfo && <Quote />}
             <div>
-                <div className='upper'>
+                <div className='upper fc-white'>
                     <p className='font-size-4'>{splitTime[0].slice(-2) <= 18 && splitTime[0].slice(-2) > 7 ? <span><img src={Sun} alt='sun icon'/></span> : <span><img src={Moon} alt='moon icon'/></span>}{greeting()}, it's currently</p>
                     <p className='font-size-8'>{splitTime[0].slice(-2)}:{splitTime[1]}<span className='font-size-6'>BST</span></p>
                     <p className='font-size-5'>in {props.city}, {props.country_code}</p>

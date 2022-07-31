@@ -15,6 +15,16 @@ body {
 // uppercase
 .upper { text-transform: uppercase; }
 
+// colors
+
+$white: #FFF;
+$grey: #303030;
+$black: #000;
+
+.fc-white { color: $white; } 
+.fc-grey { color: $grey; }
+.fc-black { color: $black; }
+
 // ----------
 //  breakpoints
 // ----------
@@ -33,14 +43,16 @@ $base-size: 1rem;
 
 //font sizes for mobile
 
-@media screen and (min-width: $breakpoint-phone) {
+@media screen and (max-width: $breakpoint-phone) {
     $font-sizes: (
         'fs-1': $base-size * 0.625,
         'fs-2': $base-size * 0.75,
-        'fs-3': $base-size * 0.9375,
-        'fs-4': $base-size * 1.25,
-        'fs-5': $base-size * 1.25,
-        'fs-6': $base-size * 6.25,
+        'fs-3': $base-size * 0.75,
+        'fs-4': $base-size * 0.9375,
+        'fs-5': $base-size * 0.9375,
+        'fs-6': $base-size * 0.9375,
+        'fs-7': $base-size * 1.25,
+        'fs-8': $base-size * 6.25,
     );
 
     // creates the utility classes for font sizes

@@ -25,16 +25,16 @@ export default function Quote(){
     }
 
     return (
-        <div className="fs-3">
+        <div className="fs-3 fc-white">
             <div>
-                <p>{ProgrammingQuote.en}</p>
+                <p>"{ProgrammingQuote.en}"</p>
                 <img 
                 src={refresh} 
                 alt='refresh icon'
                 onClick={getNewQuote}
                 />
             </div>
-            <p>{ProgrammingQuote.author}</p>
+            <p className='fw700'>{ProgrammingQuote.author}</p>
         </div>
     )
 }
