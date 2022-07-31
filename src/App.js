@@ -7,24 +7,28 @@ import './scss/app.scss';
 
 function App() {
 
-  const [worldTime, setWorldTime] = React.useState(0)
+  const [worldTime, setWorldTime] = React.useState(0);
   const [IpInfo, setIpInfo] = React.useState(0);
+  const [displayMoreInfo, setDisplayMoreInfo] = React.useState(false);
 
   React.useEffect(() => {
-    console.log('Time ran')
     fetch("http://worldtimeapi.org/api/ip")
     .then(res => res.json())
     .then(data => setWorldTime(data))
-  },[])
+  },[]);
 
   React.useEffect(() => {
     if(worldTime.client_ip){
-      console.log('IP ran')
       fetch(`http://api.ipapi.com/${worldTime.client_ip}?access_key=0a734a0ccb105e120c34bcc32d4c13f5`)
       .then(IpDataRes => IpDataRes.json())
       .then(IpData => setIpInfo(IpData))
-    }
-  }, [worldTime.client_ip])
+    };
+  },[worldTime.client_ip]);
+
+  // This function toggles the lower portion of the page when the button in FullPage is clicked
+  function handleDisplay(){
+    setDisplayMoreInfo(!displayMoreInfo);
+  };
 
   return (
       <div className="App">
@@ -34,14 +38,15 @@ function App() {
         worldTime={worldTime} 
         city={IpInfo.city} 
         country_code={IpInfo.country_code}
+        handleDisplay={handleDisplay}
         />}
 
-        <TimeDateInfo
+        {displayMoreInfo && <TimeDateInfo
         timezone={worldTime.timezone}
         day_of_year={worldTime.day_of_year}
         day_of_week={worldTime.day_of_week}
         week_number={worldTime.week_number}
-         />
+         />}
 
       </div>
     );
