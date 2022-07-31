@@ -39,6 +39,7 @@ function App() {
         city={IpInfo.city} 
         country_code={IpInfo.country_code}
         handleDisplay={handleDisplay}
+        displayMoreInfo={displayMoreInfo}
         />}
 
         {displayMoreInfo && <TimeDateInfo
