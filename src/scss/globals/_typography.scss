@@ -5,13 +5,29 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
+// ----------
+//  font utility classes
+// ----------
+
+// font weight
+.fw700 { font-weight: 700; }
+
+// uppercase
+.upper { text-transform: uppercase; }
+
+// ----------
+//  breakpoints
+// ----------
+
 $breakpoint-phone: 425px;
 $breakpoint-tablet: 768px;
 $breakpoint-laptop-sm: 1440px;
 $breakpoint-laptop: 1440px;
 
 
-//font sizes
+// ----------
+//  font sizes
+// ----------
 
 $base-size: 1rem;
 
@@ -85,7 +101,5 @@ $base-size: 1rem;
         };
     }
 }
-
-
 
 

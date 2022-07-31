@@ -1,5 +1,6 @@
 import React from 'react';
 import FullPage from './components/FullPage.js';
+import TimeDateInfo from './components/TimeDateInfo.js';
 import './scss/app.scss';
 
 
@@ -20,6 +21,7 @@ function App() {
       <div className="App">
         {/*FullPage will only render when worldTime is truthy or the API has returned data*/}
         {worldTime && <FullPage worldTime={worldTime}/>}
+        <TimeDateInfo />
       </div>
     );
 
