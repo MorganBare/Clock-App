@@ -8,9 +8,13 @@
 
 .time_container {
     padding: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 50vh;
 
     button {
-        padding: .25em .2em;
+        padding: .2em .2em .2em .3em;
         border-radius: 28px;
         border: none;
         display: flex;
@@ -18,7 +22,7 @@
 
         p {
             letter-spacing: 3.75px;
-            padding: 0 5px;
+            padding: 0 8px;
         }
 
         span {
@@ -29,4 +33,17 @@
             }
         }
     }
+}
+
+.greetingP {
+
+    letter-spacing: 3.75px;
+    span {
+        padding-right: 10px;
+        vertical-align: middle;
+    }
+}
+
+.timeP {
+    padding: 20px 0;
 }

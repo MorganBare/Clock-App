@@ -27,14 +27,16 @@ export default function FullPage(props){
             {!props.displayMoreInfo && <Quote />}
             <div className='time_container'>
                 <div className='upper fc-white'>
-                    <p className='font-size-4 ls-3'>{splitTime[0].slice(-2) <= 18 && splitTime[0].slice(-2) > 7 ? <span><img src={Sun} alt='sun icon'/></span> : <span><img src={Moon} alt='moon icon'/></span>}{greeting()}</p>
-                    <p className='font-size-8 ls-2'>{splitTime[0].slice(-2)}:{splitTime[1]}<span className='font-size-6'>BST</span></p>
+                    <p className='font-size-4 ls-3 greetingP'>{splitTime[0].slice(-2) <= 18 && splitTime[0].slice(-2) > 7 ? <span><img src={Sun} alt='sun icon'/></span> : <span><img src={Moon} alt='moon icon'/></span>}{greeting()}</p>
+                    <p className='font-size-8 ls-2 fw700 timeP'>{splitTime[0].slice(-2)}:{splitTime[1]}<span className='font-size-6 ls-4 fw400' style={{'padding-left': '10px'}}>BST</span></p>
                     <p className='font-size-5 ls-3'>in {props.city}, {props.country_code}</p>
                 </div>
-                <button onClick={props.handleDisplay} 
-                    className='font-size-2 upper'>
-                    {props.displayMoreInfo ? <><p className='fc-grey fw700'>Less</p><span><img src={UpArrow} alt='up arrow'/></span></> : <><p className='fc-grey fw700'>More</p><span><img src={DownArrow} alt='down arrow'/></span></> }
-                </button>
+                <div>
+                    <button onClick={props.handleDisplay} 
+                        className='font-size-2 upper'>
+                        {props.displayMoreInfo ? <><p className='fc-grey fw700'>Less</p><span><img src={UpArrow} alt='up arrow'/></span></> : <><p className='fc-grey fw700'>More</p><span><img src={DownArrow} alt='down arrow'/></span></> }
+                    </button>
+                </div>
             </div>
             { props.displayMoreInfo && 
             <TimeDateInfo
