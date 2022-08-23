@@ -25,9 +25,9 @@ export default function Quote(){
     }
 
     return (
-        <div className="fs-3 fc-white">
-            <div>
-                <p>"{ProgrammingQuote.en}"</p>
+        <div className="font-size-3 fc-white outer_quote_container">
+            <div className='flex quote_container'>
+                <p className='lh-1'>"{ProgrammingQuote.en}"</p>
                 <img 
                 src={refresh} 
                 alt='refresh icon'

@@ -40,15 +40,12 @@ function App() {
         country_code={IpInfo.country_code}
         handleDisplay={handleDisplay}
         displayMoreInfo={displayMoreInfo}
-        />}
-
-        {displayMoreInfo && <TimeDateInfo
         timezone={worldTime.timezone}
         day_of_year={worldTime.day_of_year}
         day_of_week={worldTime.day_of_week}
         week_number={worldTime.week_number}
-         />}
-
+        />}
+        
       </div>
     );
 

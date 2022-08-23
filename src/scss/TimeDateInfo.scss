@@ -1,0 +1,13 @@
+.date_info_container {
+    height: 100%;
+}
+
+.blur {
+    backdrop-filter: blur(15px);
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.weekDiv {
+    border-left: 1px solid gray;
+}

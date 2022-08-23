@@ -13,7 +13,7 @@
 }
 
 body {
-    min-height: 100vh;
+    height: 100%;
     text-rendering: optimizeSpeed;
     background-image: url(../../assets/desktop/bg-image-daytime.jpg);
     background-position: top; 
@@ -21,17 +21,15 @@ body {
     background-size:cover;
 }
 
+html {
+  min-height: 100%;
+  position: relative;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role='list'],
 ol[role='list'] {
   list-style: none;
-}
-
-/* Make images easier to work with */
-img,
-picture {
-  max-width: 100%;
-  display: block;
 }
 
 span {
