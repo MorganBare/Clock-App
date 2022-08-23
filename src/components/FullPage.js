@@ -25,7 +25,7 @@ export default function FullPage(props){
         <div className='full_page_container'>
             {/* quote is only shown when displayMoreInfo is false */}
             {!props.displayMoreInfo && <Quote />}
-            <div>
+            <div className='time_container'>
                 <div className='upper fc-white'>
                     <p className='font-size-4 ls-3'>{splitTime[0].slice(-2) <= 18 && splitTime[0].slice(-2) > 7 ? <span><img src={Sun} alt='sun icon'/></span> : <span><img src={Moon} alt='moon icon'/></span>}{greeting()}</p>
                     <p className='font-size-8 ls-2'>{splitTime[0].slice(-2)}:{splitTime[1]}<span className='font-size-6'>BST</span></p>
@@ -33,7 +33,7 @@ export default function FullPage(props){
                 </div>
                 <button onClick={props.handleDisplay} 
                     className='font-size-2 upper'>
-                    {props.displayMoreInfo ? <p>Less<span><img src={UpArrow} alt='up arrow'/></span></p> : <p>More<span><img src={DownArrow} alt='down arrow'/></span></p> }
+                    {props.displayMoreInfo ? <><p className='fc-grey fw700'>Less</p><span><img src={UpArrow} alt='up arrow'/></span></> : <><p className='fc-grey fw700'>More</p><span><img src={DownArrow} alt='down arrow'/></span></> }
                 </button>
             </div>
             { props.displayMoreInfo && 
